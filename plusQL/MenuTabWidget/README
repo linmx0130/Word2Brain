@@ -1,0 +1,53 @@
+plusQL -> pQMenuTabWidget
+
+This widget is a little like QTabWiget. It provides a button bar and a 
+stacked layout. The users can click the button to change the page of the 
+widgets and clicked the first button to show a menu. This extension has two
+class - one is the item of each pair of a page(widget) and a button and 
+another is the truely MenuTab.
+
+pQMenuTabItem : QObject
+	private:
+		QPushButton *__button;
+		QWidget *__page;
+		pQMenuTabWidget *parent;
+	public slots:
+		void button_clicked();
+	public:
+		pQMenuTabItem();
+		void setButton(QPushButton *button);
+		void setPage(QWidget *page);
+		QPushButton *button();
+		QWidget *page();
+		void setParent(pQMenuTabWidget*);
+
+pQMenuTabWidget: QWidget
+	private:
+		QVBoxLayout *mainlayout;
+		QHBoxLayout *buttonbar;
+		QStackedLayout *view;
+		QPushButton *menubutton;
+		QMenu *menu;
+		QButtonGroup *buttongroup;
+		QList <pQMenuTabItem*> *item_list;
+		bool clicked;
+	signals:
+		void currentChanged(int index);
+		void menuAboutToShow();
+		void menuAboutToHide();
+	public slots:
+		void setCurrentPage(int page_num);
+		void setCurrentButton(QPushButton *button);
+		void setMenuButtonText(const QString & text);
+	public:
+		pQMenuTabWidget(QWidget *parent=0);
+		void addMenuTabItem(pQMenuTabItem *item);
+		void addPage(const QString &text,QWidget *page);
+		void removeMenuTabItem(pQMenuTabItem *item);
+		void removePage(QWidget *page);
+		pQMenuTabItem* itemAt(int pos);
+		QMenu *menuObject();
+		QPushButton *menuButton();
+
+* if you use removeMenuTabItem() to remove the page, you should to delete 
+the widget by yourself, while other remove functions will do this work.
