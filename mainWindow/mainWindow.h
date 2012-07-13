@@ -17,6 +17,7 @@ class mainWindow
 		void createMenu();
 	private slots:
 		void callAbout();
+		void callQuit();
 	public:
 		mainWindow(QWidget *parent=0);
 };

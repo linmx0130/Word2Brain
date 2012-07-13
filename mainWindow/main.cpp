@@ -1,5 +1,6 @@
 #include <QApplication>
 #include <QtGui>
+#include <cstdlib>
 #include "mainWindow.h"
 #include "../plusQL/MenuTabWidget/pQMenuTabWidget.h"
 #include "Page1/Page1.h"
@@ -37,8 +38,10 @@ void mainWindow::createMenu()
 	exitAction=new QAction("退出(&Q)",this);
 	exitAction->setShortcut(QKeySequence::Quit);
 	exitAction->setStatusTip("退出Word2Brain");
+	connect(exitAction,SIGNAL(triggered()),this,SLOT(callQuit()));
 	this->mainForm->menuObject()->addAction(exitAction);
 }
+
 void mainWindow::callAbout()
 {
 	QString aboutTitle="关于Word2Brain";
@@ -51,4 +54,9 @@ void mainWindow::callAbout()
 			使用担保，如果想了解更多，您可以在如下网站获得本程序源代码：</p>\
 			<p><a href='https://github.com/linmx0130/Word2Brain'>https://github.com/linmx0130/Word2Brain</a></p>";
 	QMessageBox::about(this,aboutTitle,aboutComment);
+}
+void mainWindow::callQuit()
+{
+	//maybe I should try to show a dialog in the future.
+	exit(EXIT_SUCCESS);
 }
