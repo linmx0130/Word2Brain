@@ -24,9 +24,12 @@ mainWindow::mainWindow(QWidget *parent)
 
 	this->page1=new Page1;
 	this->mainForm->addPage("新建",page1);
-	this->mainForm->setCurrentPage(0);
-	this->createMenu();
+	
+	this->page2=new Page2;
+	this->mainForm->addPage("打开",page2);
 
+	this->createMenu();
+	this->mainForm->setCurrentPage(0);
 	this->setLayout(mainlayout);
 }
 void mainWindow::createMenu()
