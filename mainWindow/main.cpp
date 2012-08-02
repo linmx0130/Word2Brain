@@ -8,7 +8,9 @@
 int main(int argc, char** argv)
 {
 	QApplication app(argc,argv);
-	QTextCodec::setCodecForCStrings(QTextCodec::codecForName("utf8"));	
+	QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
+	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
+	QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
 	mainWindow *win=new mainWindow;
 	win->show();
 	return app.exec();

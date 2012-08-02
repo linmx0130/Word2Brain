@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<W2BV1>
+	<WN>
+		<Word>[the word]</Word>
+		<Mean>[the meaning]</Mean>
+	</WN>
+	<WN>
+		<Word>apple</Word>
+		<Mean>苹果</Mean>
+	</WN>
+</W2BV1>
