@@ -17,8 +17,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 Some parts of this program is from other project; these code maybe not 
-follows GPLv3+, but could be used with GPL program. Here is the list.
+follows GPLv3+ at first, but could be used with GPL program. Here is 
+the list.
 	plusQL(BSD-like License) https://github.com/linmx0130/plusQL
+Please read NOTICE for the details.
 
 
 Word2Brain是一个简单的背单词软件
@@ -34,3 +36,7 @@ Word2Brain是一个简单的背单词软件
 <http://www.gnu.org/licenses>。
 
 
+这个程序中有一部分来自于其他项目；这些代码可能最初不是遵从GPLv3+,但可以
+被使用在GPL程序之中。这里有一个列表。
+	plusQL(BSD-like License) https://github.com/linmx0130/plusQL
+请阅读NOTICE文件以了解详情。
