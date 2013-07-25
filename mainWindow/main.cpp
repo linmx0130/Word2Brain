@@ -1,5 +1,6 @@
 #include <QApplication>
 #include <QtGui>
+#include <QtWidgets>
 #include <cstdlib>
 #include "mainWindow.h"
 #include "../plusQL/MenuTabWidget/pQMenuTabWidget.h"
@@ -8,9 +9,12 @@
 int main(int argc, char** argv)
 {
 	QApplication app(argc,argv);
+	/*
 	QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 	QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
+	*/
+	//These functions only be used in Qt4 
 	mainWindow *win=new mainWindow;
 	win->show();
 	return app.exec();
